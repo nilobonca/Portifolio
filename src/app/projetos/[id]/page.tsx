@@ -2,11 +2,12 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { projects } from "@/data/projects";
+import { getAllProjects, getProjectBySlug } from "@/lib/projects";
 import styles from "./project.module.css";
 
 // This helps Next.js generate static pages for each project during build
 export function generateStaticParams() {
+  const projects = getAllProjects();
   return projects.map((project) => ({
     id: project.id,
   }));
@@ -18,7 +19,7 @@ export default async function ProjectPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const project = projects.find((p) => p.id === id);
+  const project = getProjectBySlug(id);
 
   if (!project) {
     notFound();

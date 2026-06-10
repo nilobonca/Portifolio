@@ -8,6 +8,7 @@
   transition: transform var(--transition), box-shadow var(--transition);
   text-decoration: none;
   color: inherit;
+  height: 100%;
 }
 
 .card:hover {

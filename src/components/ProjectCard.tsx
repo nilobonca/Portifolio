@@ -8,6 +8,7 @@ interface ProjectCardProps {
   tags: string[];
   imageUrl: string;
   link?: string;
+  priority?: boolean;
 }
 
 export default function ProjectCard({
@@ -16,6 +17,7 @@ export default function ProjectCard({
   tags,
   imageUrl,
   link = "#",
+  priority = false,
 }: ProjectCardProps) {
   const isExternal = link.startsWith("http");
 
@@ -23,7 +25,7 @@ export default function ProjectCard({
     return (
       <a href={link} className={styles.card} target="_blank" rel="noopener noreferrer">
         <div className={styles.imageContainer}>
-          <Image src={imageUrl} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" className={styles.image} />
+          <Image src={imageUrl} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" className={styles.image} priority={priority} />
         </div>
         <div className={styles.content}>
           <h3 className={styles.title}>{title}</h3>
@@ -43,7 +45,7 @@ export default function ProjectCard({
   return (
     <Link href={link} className={styles.card}>
       <div className={styles.imageContainer}>
-        <Image src={imageUrl} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" className={styles.image} />
+        <Image src={imageUrl} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" className={styles.image} priority={priority} />
       </div>
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
