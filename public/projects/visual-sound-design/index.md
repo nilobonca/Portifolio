@@ -1,6 +1,6 @@
 ---
 title: "Visual Sound Design"
-description: "Ferramenta interativa e colaborativa para criação de mapas e gerenciamento de som espacial para mesas de RPG."
+description: "Ferramenta interativa e colaborativa para criação de mapas sonoros e gerenciamento de som espacial para mesas de RPG."
 tags: 
   - "Next.js"
   - "Konva"
