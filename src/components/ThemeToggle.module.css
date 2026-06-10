@@ -1,0 +1,15 @@
+.toggleButton {
+  padding: 8px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.toggleButton:hover {
+  background-color: var(--border);
+  transform: scale(1.1);
+}
