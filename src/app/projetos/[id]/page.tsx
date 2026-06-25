@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { getAllProjects, getProjectBySlug } from "@/lib/projects";
+import ProjectGallery from "@/components/ProjectGallery";
 import styles from "./project.module.css";
 
 // This helps Next.js generate static pages for each project during build
@@ -25,22 +25,17 @@ export default async function ProjectPage({
     notFound();
   }
 
+  const images = project.gallery && project.gallery.length > 0 
+    ? project.gallery 
+    : [project.imageUrl];
+
   return (
     <main className={styles.container}>
       <Link href="/" className={styles.backButton}>
         ← Voltar para o início
       </Link>
 
-      <div className={styles.imageWrapper}>
-        <Image
-          src={project.imageUrl}
-          alt={project.title}
-          fill
-          sizes="(max-width: 800px) 100vw, 800px"
-          className={styles.image}
-          priority
-        />
-      </div>
+      <ProjectGallery images={images} title={project.title} />
 
       <article className={styles.content}>
         <ReactMarkdown>{project.content}</ReactMarkdown>

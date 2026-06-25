@@ -7,6 +7,14 @@ tags:
   - "Supabase"
   - "Radix UI"
 imageUrl: "cover.png"
+gallery:
+- "cover.png"
+- "01.png"
+- "02.png"
+- "03.png"
+- "04.png"
+- "05.png"
+
 link: "https://github.com/nilobonca/neosituacional"
 ---
 

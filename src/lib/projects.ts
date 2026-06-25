@@ -10,6 +10,7 @@ export interface ProjectData {
   description: string;
   tags: string[];
   imageUrl: string;
+  gallery?: string[];
   link?: string;
   content: string;
 }
@@ -41,11 +42,22 @@ export function getAllProjects(): ProjectData[] {
         imageUrl = `/projects/${id}/${imageUrl}`;
       }
 
+      let gallery = matterResult.data.gallery || [];
+      if (gallery.length > 0) {
+        gallery = gallery.map((img: string) => {
+          if (img && !img.startsWith("/") && !img.startsWith("http")) {
+            return `/projects/${id}/${img}`;
+          }
+          return img;
+        });
+      }
+
       return {
         id,
         content: matterResult.content,
         ...(matterResult.data as Omit<ProjectData, "id" | "content">),
         imageUrl,
+        gallery,
       };
     })
     .filter(Boolean) as ProjectData[];
@@ -68,10 +80,21 @@ export function getProjectBySlug(id: string): ProjectData | undefined {
     imageUrl = `/projects/${id}/${imageUrl}`;
   }
 
+  let gallery = matterResult.data.gallery || [];
+  if (gallery.length > 0) {
+    gallery = gallery.map((img: string) => {
+      if (img && !img.startsWith("/") && !img.startsWith("http")) {
+        return `/projects/${id}/${img}`;
+      }
+      return img;
+    });
+  }
+
   return {
     id,
     content: matterResult.content,
     ...(matterResult.data as Omit<ProjectData, "id" | "content">),
     imageUrl,
+    gallery,
   };
 }
