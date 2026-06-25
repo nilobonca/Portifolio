@@ -44,11 +44,17 @@
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.navButton svg, .closeButton svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .navButton:hover {
   background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
 }
 
 .prevButton {
