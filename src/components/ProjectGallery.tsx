@@ -68,6 +68,7 @@ export default function ProjectGallery({ images, title }: ProjectGalleryProps) {
             sizes="(max-width: 800px) 100vw, 800px"
             className={styles.image}
             priority
+            unoptimized
           />
         </div>
 
@@ -94,6 +95,7 @@ export default function ProjectGallery({ images, title }: ProjectGalleryProps) {
                 fill
                 sizes="100px"
                 className={styles.thumbnailImage}
+                unoptimized
               />
             </button>
           ))}
@@ -115,6 +117,7 @@ export default function ProjectGallery({ images, title }: ProjectGalleryProps) {
               sizes="100vw"
               className={styles.fullscreenImage}
               quality={100}
+              unoptimized
             />
             {isMultiple && (
               <>
