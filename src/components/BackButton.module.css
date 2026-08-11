@@ -1,0 +1,67 @@
+.inlineContainer {
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.inlineButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.inlineButton:hover {
+  color: var(--text-primary);
+}
+
+.floatingButton {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(-15px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.floatingButton.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.floatingButton:hover {
+  transform: translateY(2px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+  border-color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .inlineContainer {
+    margin-bottom: 24px;
+  }
+
+  .floatingButton {
+    top: 16px;
+    left: 16px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}

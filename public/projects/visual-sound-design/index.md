@@ -1,5 +1,5 @@
 ---
-title: "Visual Sound Design"
+title: "RPGSA (Visual Sound Design/ RPG Super App)"
 description: "Ferramenta interativa e colaborativa para criação de mapas sonoros e gerenciamento de som espacial para mesas de RPG."
 tags: 
   - "Next.js"
@@ -7,10 +7,10 @@ tags:
   - "PeerJS"
   - "Supabase"
 imageUrl: "cover-v2.png"
-link: "https://github.com"
+link: "https://github.com/nilobonca/RPGSA"
 ---
 
-# Visual Sound Design
+# RPGSA (Visual Sound Design/ RPG Super App)
 
 Um utilitário web voltado para Mestres de RPG de Mesa que desejam elevar a imersão e organização do design sonoro de uma maneira visual moderna. O que não limita apenas aos narradores de RPG, podendo ser utilizado aos para outros fins.
 
